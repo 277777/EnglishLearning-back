@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserDB">
+
+	<insert id="Register" parameterType="com.Graduate.Po.User">
+		insert into user(username,userpwd,usertele)
+		values(#{username},#{userpwd},#{usertele});
+	</insert>
+
+	<select id="findUserAll" parameterType="com.Graduate.Po.User"
+		resultType="com.Graduate.Po.User">
+		select * from user where username = #{username} and userpwd = #{userpwd};
+	</select>
+
+	<select id="repassword" parameterType="com.Graduate.Po.User"
+		resultType="com.Graduate.Po.User">
+		select * from user where username = #{username} and usertele = #{usertele};
+	</select>
+
+	<select id="findUserName" parameterType="String"
+		resultType="com.Graduate.Po.User">
+		select * from user where username = #{username};
+	</select>
+
+	<update id="UpdatePassword" parameterType="com.Graduate.Po.User">
+		update user set userpwd = #{userpwd} where username = #{username};
+	</update>
+
+	<update id="UpdateImage" parameterType="com.Graduate.Po.User">
+		update user set userimg = #{userpwd} where username = #{username};
+	</update>
+
+	<update id="UpdateUserMain" parameterType="com.Graduate.Po.User">
+		update user set usermainid = #{usermainid} where userid = #{userid};
+	</update>
+
+	<update id="UpdateUserCiku" parameterType="com.Graduate.Po.User">
+		update user set cikuid = #{cikuid} , userlearn = #{userlearn} where userid = #{userid};
+	</update>
+	
+		<update id="UpdateLearning" parameterType="com.Graduate.Po.User">
+		update user set userlearn = userlearn + 1 where userid = #{userid};
+	</update>
+
+</mapper>

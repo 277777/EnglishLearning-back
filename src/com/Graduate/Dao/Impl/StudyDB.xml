@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="StudyDB">
+
+	<select id="SelectMore" parameterType="com.Graduate.Po.Study"
+		resultType="com.Graduate.Po.Study">
+		select * from study where userid = #{userid};
+	</select>
+
+	<select id="UpdateMon" parameterType="com.Graduate.Po.Study">
+		update study set mon = mon + 10 where userid = #{userid};
+	</select>
+
+	<select id="UpdateTue" parameterType="com.Graduate.Po.Study">
+		update study set tue = tue + 10 where userid = #{userid};
+	</select>
+
+
+	<select id="UpdateWed" parameterType="com.Graduate.Po.Study">
+		update study set wed = wed + 10 where userid = #{userid};
+	</select>
+
+	<select id="UpdateThu" parameterType="com.Graduate.Po.Study">
+		update study set thu = thu + 10 where userid = #{userid};
+	</select>
+
+	<select id="UpdateFri" parameterType="com.Graduate.Po.Study">
+		update study set fri = fri + 10 where userid = #{userid};
+	</select>
+
+	<select id="UpdateSat" parameterType="com.Graduate.Po.Study">
+		update study set sat = sat + 10 where userid = #{userid};
+	</select>
+
+	<select id="UpdateSun" parameterType="com.Graduate.Po.Study">
+		update study set sun = sun + 10 where userid = #{userid};
+	</select>
+
+
+</mapper>

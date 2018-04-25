@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserMainDB">
+
+	<insert id="Register" parameterType="com.Graduate.Po.UserMain">
+		<selectKey resultType="java.lang.Integer" order="AFTER"
+			keyProperty="usermainid">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into
+		usermain(usermainname,usermainsex,usermaincollege,usermainclass,usermainemail)
+		values(#{usermainname},#{usermainsex},#{usermaincollege},#{usermainclass},#{usermainemail});
+	</insert>
+
+	<select id="findUserMainAll" parameterType="java.lang.Integer"
+		resultType="com.Graduate.Po.UserMain">
+		select usermain.*
+		from usermain
+		INNER JOIN `user`
+		on `user`.usermainid = usermain.usermainid and `user`.userid = #{userid}
+	</select>
+
+</mapper>

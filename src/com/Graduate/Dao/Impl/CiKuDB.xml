@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="CiKuDB">
+	    
+	    <select id="SelectCetf" resultType="com.Graduate.Po.CiKu" >
+	    	select * from cetf;
+	    </select>
+	    
+	    <select id="SelectCets" resultType="com.Graduate.Po.CiKu" >
+	    	select * from cets;
+	    </select>
+	    
+	    <select id="SelectKaoYan" resultType="com.Graduate.Po.CiKu" >
+	    	select * from kaoyan;
+	    </select>
+	    
+	    <select id="SelectGRE" resultType="com.Graduate.Po.CiKu" >
+	    	select * from gre;
+	    </select>
+	    
+	</mapper>

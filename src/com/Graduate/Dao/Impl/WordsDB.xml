@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="WordsDB">
+
+	<select id="SelectWords" parameterType="com.Graduate.Po.RandOM" resultType="com.Graduate.Po.Words">
+		select * from words where ID in (#{a},#{b},#{c},#{d});
+	</select>
+
+	<select id="SelectID" parameterType="java.lang.String" resultType="java.lang.Integer">
+		Select ID from words where Word = #{word}
+	</select>
+
+</mapper>
